@@ -12,8 +12,13 @@
 
 #include <stdio.h>
 
-int	ft_isdigit(int c)
+int	ft_isdigit(int c, int pos)
 {
+	if (pos == 0)
+	{
+		if (c == '-')
+			return (1024);
+	}
 	if (('0' <= c && c <= '9'))
 		return (1024);
 	return (0);

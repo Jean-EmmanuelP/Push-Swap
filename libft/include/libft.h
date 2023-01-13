@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stddef.h>
+#include <stdbool.h>
 
 typedef struct s_list
 {
@@ -23,7 +24,10 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+
+int 	ft_overflow(char *s1, char *s2);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+int 	ft_strcmp(const char *s1, const char *s2);
 t_list	*ft_lstlast(t_list *lst);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 size_t	ft_strlcat(char *dest, const char *src, size_t n);
@@ -44,7 +48,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 t_list	*ft_lstlast(t_list *lst);
 int		ft_strlen(const char *c);
-int		ft_isdigit(int c);
+int		ft_isdigit(int c, int pos);
 int		ft_isascii(int c);
 int		ft_isprint(char c);
 void	ft_putendl_fd(char *s, int fd);

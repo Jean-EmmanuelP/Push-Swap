@@ -25,7 +25,7 @@ OBJS		:= $(SRCS:$(SRC_DIR)/%.c=$(BUILD_DIR)/%.o)
 DEPS		:= $(OBJS:.o=.d)
 
 CC			:= cc
-CFLAGS		:= -Wall -Wextra -Werror
+CFLAGS		:= -Wall -Wextra -Werror -g
 CPPFLAGS	:= -MMD -MP -I include
 RM			:= rm -f
 MAKEFLAGS	+= --no-print-directory

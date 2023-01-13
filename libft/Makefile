@@ -14,6 +14,7 @@ NAME        := libft.a
 SRC_DIR     := src
 BUILD_DIR   := .build
 SRCS		:= 	\
+			bool/ft_overflow.c \
 			bool/ft_isalpha.c \
 			bool/ft_isdigit.c \
 			bool/ft_isascii.c \
@@ -24,6 +25,7 @@ SRCS		:= 	\
 			stdlib/ft_strdup.c \
 			strings/ft_memchr.c \
 			strings/ft_memccpy.c \
+			strings/ft_strcmp.c \
 			strings/ft_memcpy.c \
 			strings/ft_memcmp.c \
 			strings/ft_strchr.c \
