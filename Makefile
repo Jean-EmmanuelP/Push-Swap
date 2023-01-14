@@ -6,7 +6,7 @@
 #    By: jperrama <jperrama@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/11 10:54:49 by jperrama          #+#    #+#              #
-#    Updated: 2023/01/11 20:30:28 by jperrama         ###   ########.fr        #
+#    Updated: 2023/01/14 19:59:31 by jperrama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,8 @@ NAME        := push_swap
 SRC_DIR     := src
 BUILD_DIR   := .build
 SRCS		:= 	\
+			algorithm/sort_100_and_500.c \
+			algorithm/sort_5_and_3.c \
 			parsing/checking.c \
 			parsing/init.c \
 			main.c \
@@ -37,7 +39,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	make -C libft
-	$(CC) $(OBJS) $(LIBRARIES) -o $(NAME)
+	$(CC) $(OBJS) $(LIBRARIES) -o $(NAME) -L./ -lft
 	$(info CREATED $@)
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
