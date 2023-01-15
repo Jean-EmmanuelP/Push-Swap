@@ -25,6 +25,7 @@ int main(int ac, char **av)
     printf("This is good!\n");
     t_Node *pile_a = initialize_the_nodes(ac, av);
     t_Node *pile_b = NULL;
+    /*
     printf("---\nPile A au debut:\n");
     if (!pile_b)
       print_linked_list(pile_a);
@@ -36,6 +37,12 @@ int main(int ac, char **av)
     print_linked_index(pile_a);
     printf("---\nPile B\n");
     print_linked_list(pile_b);
+    */
+    printf("---\nPile A au debut:\n");
+    print_linked_list(pile_a);
+   sort_elements(ac - 1, pile_a, pile_b);
+    printf("---\nPile A a la fin:\n");
+    print_linked_list(pile_a);
     return (true);
   }
   printf("Error\n");

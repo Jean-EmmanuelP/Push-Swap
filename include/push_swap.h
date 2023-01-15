@@ -29,4 +29,8 @@ void    invertlastTwo(t_Node **head);
 void    move_first_element(t_Node **src, t_Node **dest);
 void    rotate(t_Node **head);
 void    reverse(t_Node **head);
+/* src / algorithm */
+void sort_elements(int ac, t_Node *head_a, t_Node *head_b);
+void swap(t_Node *head_a);
+void sort_three(t_Node *head_a, t_Node *head_b);
 #endif
