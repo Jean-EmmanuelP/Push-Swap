@@ -14,6 +14,8 @@ Initialisation :
 
 Algorithme :
 1. Mettre les index
+2. Trier pour 3 index;
+3. Trier pour 5 index;
 */
 
 int main(int ac, char **av)
@@ -29,6 +31,9 @@ int main(int ac, char **av)
     printf("---\nLes piles apres :\n");
     printf("---\nPile A\n");
     print_linked_list(pile_a);
+    set_the_index(pile_a, ac);
+    printf("---\nIndex\n");
+    print_linked_index(pile_a);
     printf("---\nPile B\n");
     print_linked_list(pile_b);
     return (true);

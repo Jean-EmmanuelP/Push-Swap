@@ -6,7 +6,7 @@
 /*   By: jperrama <jperrama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 19:02:52 by jperrama          #+#    #+#             */
-/*   Updated: 2023/01/14 21:00:01 by jperrama         ###   ########.fr       */
+/*   Updated: 2023/01/15 19:13:07 by jperrama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,17 @@ void	print_linked_list(t_Node *head)
 	printf("NULL\n");
 }
 
+void	print_linked_index(t_Node *head)
+{
+	t_Node *current = head;
+	while (current != NULL)
+	{
+		printf("%d->", current->index);
+		current = current->next;
+	}
+	printf("NULL\n");
+}
+
 /* Mettre dans un tableau de int , trier le tableau d'int*/
 /* Comparer la position de l'element avec la position du tableau, si = */
 /* L'index est l'incrementeur */
@@ -68,7 +79,7 @@ void set_the_index(t_Node *head, int ac)
 {
 	int *array;
 	t_Node *current = head;
-	t_Node *cmp_value = head;
+	t_Node *maillon = head;
 	int size = 0;
 	array = malloc(sizeof(int) * (ac - 1));
 	while (current != NULL)
@@ -95,7 +106,17 @@ void set_the_index(t_Node *head, int ac)
 		}
 		j++;
 	}
-	i = 0;
-	while ()
+	int i;
+	while (maillon != NULL)
+	{
+		i = 0;
+		while (i < ac - 1)
+		{
+			if (array[i] == maillon->data)
+				maillon->index = i;
+			i++;
+		}
+		maillon = maillon->next;
+	}
 }
 

@@ -6,10 +6,9 @@
 /*   By: jperrama <jperrama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 19:59:03 by jperrama          #+#    #+#             */
-/*   Updated: 2023/01/14 20:00:19 by jperrama         ###   ########.fr       */
+/*   Updated: 2023/01/15 19:15:26 by jperrama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
 

@@ -20,6 +20,9 @@ int is_underflow(int ac, char **av);
 /* src/ parsing / init.c */
 t_Node	*initialize_the_nodes(int ac, char **av);
 void	print_linked_list(t_Node *head);
+void	print_linked_list(t_Node *head);
+void	print_linked_index(t_Node *head);
+void	set_the_index(t_Node *head, int ac);
 t_Node	*new_elem(char *str);
 /* src / instructions / move.c */
 void    invertlastTwo(t_Node **head);
