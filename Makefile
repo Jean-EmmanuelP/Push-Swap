@@ -22,7 +22,6 @@ SRCS		:= 	\
 			parsing/checking.c \
 			parsing/init.c \
 			main.c \
-			instructions/move.c \
 			utils/utils.c \
 			free/free.c
 SRCS		:= $(SRCS:%=$(SRC_DIR)/%)
