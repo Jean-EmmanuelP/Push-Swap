@@ -63,11 +63,11 @@ void	sort_four_and_five(t_Node **stack_a, t_Node **stack_b, int height)
 	{
 		if (a->index <= 1)
 		{
-			push_to(stack_a, stack_b);
+			push_to(stack_a, stack_b, 'a');
 			transfer = transfer - 1;
 		}
 		else
-			reverse_elements(stack_a);
+			reverse_elements(stack_a, 'a');
 		a = *stack_a;
 	}
 	sort_three(stack_a);
@@ -78,7 +78,7 @@ void	sort_four_and_five(t_Node **stack_a, t_Node **stack_b, int height)
 		printf("compteur %d", i++);
 		print_linked_list(*stack_a);
 		print_linked_list(*stack_b);
-		push_to(stack_b, stack_a);
+		push_to(stack_b, stack_a, 'b');
 		height = height + 1;
 	}
 	print_linked_list(b);
@@ -87,6 +87,6 @@ void	sort_four_and_five(t_Node **stack_a, t_Node **stack_b, int height)
 	if (a->index != 0)
 	{
 		printf("c passe ici chakal");
-		swap_elements(stack_a);
+		swap_elements(stack_a, 'a');
 	}
 }

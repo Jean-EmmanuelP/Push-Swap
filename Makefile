@@ -19,7 +19,6 @@ SRCS		:= 	\
 			algorithm/sort_structure.c \
 			algorithm/sort_three.c \
 			algorithm/sort_four_five.c \
-			algorithm/sort_big.c \
 			parsing/checking.c \
 			parsing/init.c \
 			main.c \

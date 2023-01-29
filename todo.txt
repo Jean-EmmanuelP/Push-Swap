@@ -1,2 +1,3 @@
 faire la reference pour savoir quoi ecrire 
 creer dans la structure
+mettre get_position

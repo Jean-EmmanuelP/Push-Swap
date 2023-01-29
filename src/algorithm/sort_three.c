@@ -14,29 +14,27 @@
 #include "libft.h"
 
 /* echange les deux premiers elements */
-void	swap_elements(t_Node **stack)
+void	swap_elements(t_Node **stack, int signature)
 {
 	t_Node *current;
 	t_Node *newHead;
 	
 	current = *stack;
 	newHead = (*stack)->next;
-	newHead->reference = current->reference;
 	current->next = newHead->next;
 	*stack = newHead;
 	newHead->next = current;
-	if ((*stack)->reference == 'a')
-		write(1, "sa", 2);
+	if (signature == 'a')
+		write(1, "sa\n", 3);
 	else
-		write(1, "sb", 2);
-		
+		write(1, "sb\n", 3);
 }
 
 /* 
 	dernier devient premier
 	bca->NULL devient abc->NULL
 */
-void	rotate_elements(t_Node **stack)
+void	rotate_elements(t_Node **stack, int signature)
 {
 	t_Node *current;
 	t_Node *newHead;
@@ -51,13 +49,17 @@ void	rotate_elements(t_Node **stack)
 	newLast->next = NULL;
 	newHead->next = current;
 	*stack = newHead;
+	if (signature == 'a')
+		write(1, "rra\n", 4);
+	else
+		write(1, "rrb\n", 4);
 }
 
 /* 
 	premier devient dernier 
 	cab->NULL devient abc->NULL
 */
-void	reverse_elements(t_Node **stack)
+void	reverse_elements(t_Node **stack, int signature)
 {
 	t_Node *current;
 	t_Node *newHead;
@@ -73,6 +75,10 @@ void	reverse_elements(t_Node **stack)
 	current->next = newLastHead;
 	newLastHead->next = NULL;
 	*stack = newHead;
+	if (signature == 'a')
+		write(1, "ra\n", 3);
+	else
+		write(1, "rb\n", 3);
 }
 
 /* 
@@ -80,13 +86,17 @@ void	reverse_elements(t_Node **stack)
 	element de la stack dans le haut
 	de l'autre stack.
 */
-void	push_to(t_Node **a, t_Node **b)
+void	push_to(t_Node **a, t_Node **b, int signature)
 {
 	t_Node *to_push = *a;
 	
 	*a = (*a)->next;
 	to_push->next = *b;
 	*b = to_push;
+	if (signature == 'a')
+		write(1, "pa\n", 3);
+	else
+		write(1, "pb\n", 3);
 }
 /*
 

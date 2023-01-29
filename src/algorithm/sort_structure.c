@@ -15,16 +15,14 @@
 
 void	sort_structure(t_Node **head_a, t_Node **head_b, int length)
 {
-	(*head_a)->reference = 'a';
 	if (length == 2 && !*head_b)
-		swap_elements(head_a);
+		swap_elements(head_a, 'a');
 	else if (length == 3)
 		sort_three(head_a);
-	else if (length >= 4)
+	else if (length == 4 || length == 5)
 		sort_four_and_five(head_a, head_b, length);
 	else if (length <= 100)
 		sort_big(head_a, head_b, 10);
 	else
 		sort_big(head_a, head_b, 25);
-*/
 }
