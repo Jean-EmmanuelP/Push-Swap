@@ -71,22 +71,13 @@ void	sort_four_and_five(t_Node **stack_a, t_Node **stack_b, int height)
 		a = *stack_a;
 	}
 	sort_three(stack_a);
-	printf("\n Durant la boucle ");
 	int i = 0;
 	while (5 - height > 0)
 	{
-		printf("compteur %d", i++);
-		print_linked_list(*stack_a);
-		print_linked_list(*stack_b);
 		push_to(stack_b, stack_a, 'b');
 		height = height + 1;
 	}
-	print_linked_list(b);
 	a = *stack_a;
-	printf("%d %d", a->data, a->index);
 	if (a->index != 0)
-	{
-		printf("c passe ici chakal");
 		swap_elements(stack_a, 'a');
-	}
 }
