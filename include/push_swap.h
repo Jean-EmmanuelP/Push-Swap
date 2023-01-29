@@ -46,4 +46,5 @@ void	case_3(t_Node **first);
 void	sort_four_and_five(t_Node **stack_a, t_Node **stack_b, int height);
 void	get_index(t_Node **stack_a);
 void	push_to(t_Node **a, t_Node **b);
+int		ft_stack_size(t_pswap *stack_a);
 #endif
