@@ -6,6 +6,7 @@
 
 typedef struct s_node {
 	int data;
+	int is_used;
 	int reference;
 	int height;
 	struct s_node *next;
@@ -42,7 +43,7 @@ void	reverse_elements(t_Node **stack);
 void	case_1(t_Node **first, t_Node **second, t_Node **third);
 void	case_2(t_Node **first, t_Node **second);
 void	case_3(t_Node **first);
-void	sort_four_and_five(t_Node **stack_a, t_Node **stack_b);
+void	sort_four_and_five(t_Node **stack_a, t_Node **stack_b, int height);
 void	get_index(t_Node **stack_a);
 void	push_to(t_Node **a, t_Node **b);
 #endif

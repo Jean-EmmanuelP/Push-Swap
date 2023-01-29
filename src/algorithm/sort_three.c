@@ -48,7 +48,6 @@ void	rotate_elements(t_Node **stack)
 		newLast = newHead;
 		newHead = newHead->next;
 	}
-	printf("ad = %d  d = %d\n", newLast->data, newHead->data);
 	newLast->next = NULL;
 	newHead->next = current;
 	*stack = newHead;
@@ -70,7 +69,6 @@ void	reverse_elements(t_Node **stack)
 	while (current->next)
 	{
 		current = current->next;
-		printf("\nle dernier : %d\n", current->data);
 	}
 	current->next = newLastHead;
 	newLastHead->next = NULL;

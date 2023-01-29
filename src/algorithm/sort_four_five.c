@@ -27,58 +27,66 @@ void	get_index(t_Node **stack_a)
 {
 	t_Node *current;
 	t_Node *tmp;
-	int		i;
-	int 	max;
-	
-	max = 0;
+	int		index;
+
 	current = *stack_a;
 	while (current != NULL)
 	{
+		index = 0;
 		tmp = *stack_a;
-		i = 0;
 		while (tmp != NULL)
 		{
-			if (i > max)
-			{
-				max = i;
-				(*stack_a)->height = i;
-			}
-			current->index = i;
 			if (current->data > tmp->data)
-				i++;
+				index++;
 			tmp = tmp->next;
 		}
+		current->index = index;
 		current = current->next;
 	}
 }
 
 /* Cette fonction trie 4 & 5 elements */
-void	sort_four_and_five(t_Node **stack_a, t_Node **stack_b)
+void	sort_four_and_five(t_Node **stack_a, t_Node **stack_b, int height)
 {
 	t_Node *a;
 	t_Node *b;
+	int		transfer;
 
+	transfer = 2;
+	if (height == 4)
+		transfer = 1;
+	height = height - transfer;
+	get_index(stack_a);
 	b = *stack_b;
 	a = *stack_a;
-	get_index(stack_a);
-	while (a != NULL)
+	while (transfer > 0)
 	{
-		if (a->index == 1 || a->index == 0)
+		if (a->index <= 1)
 		{
 			push_to(stack_a, stack_b);
-			a = *stack_a;
+			transfer = transfer - 1;
 		}
 		else
 			reverse_elements(stack_a);
-		printf("pile A : \n");
-		print_linked_list(*stack_a);
-		printf("pile B : \n");
-		print_linked_list(*stack_b);
-		a = a->next;
+		a = *stack_a;
 	}
 	sort_three(stack_a);
-	while (b != NULL)
-		push_to(stack_a, stack_b);
-	if (a->index != 1)
+	printf("\n Durant la boucle ");
+	int i = 0;
+	while (5 - height > 0)
+	{
+		printf("compteur %d", i++);
+		print_linked_list(*stack_a);
+		print_linked_list(*stack_b);
+		push_to(stack_b, stack_a);
+		height = height + 1;
+	}
+	print_linked_list(b);
+	a = *stack_a;
+	printf("%d %d", a->data, a->index);
+	if (a->index != 0)
+	{
+		printf("c passe ici chakal");
 		swap_elements(stack_a);
+	}
 }

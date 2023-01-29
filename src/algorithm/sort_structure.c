@@ -21,7 +21,7 @@ void	sort_structure(t_Node **head_a, t_Node **head_b, int length)
 	else if (length == 3)
 		sort_three(head_a);
 	else if (length >= 4)
-		sort_four_and_five(head_a, head_b);
+		sort_four_and_five(head_a, head_b, length);
 /*
 	else if (length == 100)
 		sort_big(head_a, head_b, 10);
