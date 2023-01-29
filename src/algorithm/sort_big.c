@@ -12,3 +12,8 @@
 
 #include "push_swap.h"
 #include "libft.h"
+
+void    sort_big()
+{
+    
+}
