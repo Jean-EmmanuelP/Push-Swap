@@ -61,7 +61,7 @@ void	sort_four_and_five(t_Node **stack_a, t_Node **stack_b, int height)
 	{
 		if (a->index <= 2)
 		{
-			push_to(stack_a, stack_b, 'a');
+			push_to(stack_a, stack_b, 'b');
 			transfer = transfer - 1;
 		}
 		else
@@ -71,7 +71,7 @@ void	sort_four_and_five(t_Node **stack_a, t_Node **stack_b, int height)
 	sort_three(stack_a);
 	while (5 - height > 0)
 	{
-		push_to(stack_b, stack_a, 'b');
+		push_to(stack_b, stack_a, 'a');
 		height = height + 1;
 	}
 	a = *stack_a;

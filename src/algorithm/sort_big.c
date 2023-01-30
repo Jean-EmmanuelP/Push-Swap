@@ -42,7 +42,7 @@ void	ft_push_into_a(t_Node **stack_a, t_Node **stack_b)
 	while (ft_stack_size(*stack_b) > 0)
 	{
 		move_to_max(stack_b);
-		push_to(stack_b, stack_a, 'b');
+		push_to(stack_b, stack_a, 'a');
 	}
 }
 
@@ -55,7 +55,7 @@ void	ft_pb_or_ra(t_Node **s_a, t_Node **s_b, int range, int div)
 {
 	if ((*s_a)->index <= range + div)
 	{
-		push_to(s_a, s_b, 'a');
+		push_to(s_a, s_b, 'b');
 		if ((*s_b)->index <= range)
 			reverse_elements(s_b, 'b');
 	}
