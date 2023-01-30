@@ -41,6 +41,13 @@ void	ft_push_into_a(t_Node **stack_a, t_Node **stack_b)
 {
 	while (ft_stack_size(*stack_b) > 0)
 	{
+		if (ft_stack_size(*stack_b) == 1)
+		{
+			push_to(stack_b, stack_a, 'a');
+			if ((*stack_a)->index != 1)
+				reverse_elements(stack_a, 'a');
+			return ;
+		}
 		move_to_max(stack_b);
 		push_to(stack_b, stack_a, 'a');
 	}

@@ -90,6 +90,8 @@ void	push_to(t_Node **a, t_Node **b, int signature)
 {
 	t_Node *to_push = *a;
 	
+	if (a == NULL)
+		return ;
 	*a = (*a)->next;
 	to_push->next = *b;
 	*b = to_push;
@@ -97,6 +99,8 @@ void	push_to(t_Node **a, t_Node **b, int signature)
 		write(1, "pa\n", 3);
 	else
 		write(1, "pb\n", 3);
+	get_position(a);
+	get_position(b);
 }
 /*
 
