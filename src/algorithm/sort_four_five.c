@@ -32,7 +32,7 @@ void	get_index(t_Node **stack_a)
 	current = *stack_a;
 	while (current != NULL)
 	{
-		index = 0;
+		index = 1;
 		tmp = *stack_a;
 		while (tmp != NULL)
 		{
@@ -49,7 +49,6 @@ void	get_index(t_Node **stack_a)
 void	sort_four_and_five(t_Node **stack_a, t_Node **stack_b, int height)
 {
 	t_Node *a;
-	t_Node *b;
 	int		transfer;
 
 	transfer = 2;
@@ -57,11 +56,10 @@ void	sort_four_and_five(t_Node **stack_a, t_Node **stack_b, int height)
 		transfer = 1;
 	height = height - transfer;
 	get_index(stack_a);
-	b = *stack_b;
 	a = *stack_a;
 	while (transfer > 0)
 	{
-		if (a->index <= 1)
+		if (a->index <= 2)
 		{
 			push_to(stack_a, stack_b, 'a');
 			transfer = transfer - 1;
@@ -71,13 +69,12 @@ void	sort_four_and_five(t_Node **stack_a, t_Node **stack_b, int height)
 		a = *stack_a;
 	}
 	sort_three(stack_a);
-	int i = 0;
 	while (5 - height > 0)
 	{
 		push_to(stack_b, stack_a, 'b');
 		height = height + 1;
 	}
 	a = *stack_a;
-	if (a->index != 0)
+	if (a->index != 1)
 		swap_elements(stack_a, 'a');
 }
