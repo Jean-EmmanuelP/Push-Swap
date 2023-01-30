@@ -53,11 +53,6 @@ void	ft_push_into_a(t_Node **stack_a, t_Node **stack_b)
 	}
 }
 
-/*
-    Cette fonction effectue des choix en fonction d'une situation 
-    PS: ceci est une constatation, et non une explication du pourquoi
-    du comment 
-*/
 void	ft_pb_or_ra(t_Node **s_a, t_Node **s_b, int range, int div)
 {
 	if ((*s_a)->index <= range + div)
