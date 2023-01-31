@@ -26,22 +26,20 @@ int main(int ac, char **av)
 {
   t_Node *struct_a;
   t_Node *struct_b;
-  /*
-  printf("number of elements : %d\n", ac - 1);
-  */
+
   if (checking_is_right(ac, av) == true)
   {
     struct_a = initialize_the_nodes(ac, av);
     struct_b = NULL;
     sort_structure(&struct_a, &struct_b, ac - 1);
-    /*
     printf("---\nPile A au debut:\n");
     print_linked_list(struct_a);
     printf("\n---\nPile A a la fin:\n");
     print_linked_list(struct_a);
-    */
-    return (true);
+    ft_free_all(struct_a, struct_b);
+    return (0);
   }
+  ft_free_all(struct_a, struct_b);
   write(2, "Error\n", 6);
-  return (false);
+  return (0);
 }

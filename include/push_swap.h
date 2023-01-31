@@ -50,4 +50,5 @@ void	move_to_max(t_Node **stack);
 void	ft_push_into_a(t_Node **stack_a, t_Node **stack_b);
 void	ft_pb_or_ra(t_Node **s_a, t_Node **s_b, int range, int div);
 void	sort_big(t_Node **stack_a, t_Node **stack_b, int div);
+void	ft_free_all(t_Node *stack_a, t_Node *stack_b);
 #endif

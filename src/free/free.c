@@ -12,3 +12,20 @@
 
 #include "push_swap.h"
 
+void	ft_free_all(t_Node *stack_a, t_Node *stack_b)
+{
+	t_Node		*tmp;
+
+	while (stack_a)
+	{
+		tmp = stack_a;
+		stack_a = stack_a->next;
+		free(tmp);
+	}
+	while (stack_b)
+	{
+		tmp = stack_b;
+		stack_b = stack_b->next;
+		free(tmp);
+	}
+}
