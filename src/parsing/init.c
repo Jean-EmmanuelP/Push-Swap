@@ -15,7 +15,9 @@
 
 t_Node	*new_elem(char *str)
 {
-	t_Node	*new_node = (t_Node*)malloc(sizeof(t_Node));
+	t_Node	*new_node;
+
+	new_node = (t_Node *)malloc(sizeof(t_Node));
 	if (!str)
 		return (NULL);
 	if (!new_node)
@@ -28,11 +30,12 @@ t_Node	*new_elem(char *str)
 
 t_Node	*initialize_the_nodes(int ac, char **av)
 {
-	t_Node *head = NULL;
-	t_Node *new_node = NULL;
-	int i;
-	
+	t_Node	*head;
+	t_Node	*new_node;
+	int		i;
+
 	head = NULL;
+	new_node = NULL;
 	i = 1;
 	while (i < ac)
 	{
@@ -52,7 +55,9 @@ t_Node	*initialize_the_nodes(int ac, char **av)
 
 void	print_linked_list(t_Node *head)
 {
-	t_Node *current = head;
+	t_Node	*current;
+
+	current = head;
 	while (current != NULL)
 	{
 		printf("%d->", current->data);
@@ -63,7 +68,9 @@ void	print_linked_list(t_Node *head)
 
 void	print_linked_index(t_Node *head)
 {
-	t_Node *current = head;
+	t_Node	*current;
+
+	current = head;
 	while (current != NULL)
 	{
 		printf("%d->", current->index);

@@ -25,8 +25,8 @@
 
 void	get_index(t_Node **stack_a)
 {
-	t_Node *current;
-	t_Node *tmp;
+	t_Node	*current;
+	t_Node	*tmp;
 	int		index;
 
 	current = *stack_a;
@@ -48,8 +48,8 @@ void	get_index(t_Node **stack_a)
 /* Cette fonction trie 4 element */
 void	sort_four(t_Node **stack_a, t_Node **stack_b)
 {
-	t_Node *a;
-	int	transfer;
+	t_Node	*a;
+	int		transfer;
 
 	transfer = 1;
 	a = *stack_a;
@@ -74,16 +74,13 @@ void	sort_four(t_Node **stack_a, t_Node **stack_b)
 /* Cette fonction trie 4 & 5 elements */
 void	sort_four_and_five(t_Node **stack_a, t_Node **stack_b, int height)
 {
-	t_Node *a;
+	t_Node	*a;
 	int		transfer;
 
 	get_index(stack_a);
 	transfer = 2;
 	if (height == 4)
-	{
-		sort_four(stack_a, stack_b);
-		return ;
-	}
+		return (sort_four(stack_a, stack_b));
 	a = *stack_a;
 	while (transfer > 0)
 	{

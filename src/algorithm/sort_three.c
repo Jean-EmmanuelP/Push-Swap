@@ -16,14 +16,14 @@
 /* echange les deux premiers elements */
 void	swap_elements(t_Node **stack, int signature)
 {
-	t_Node *current;
-	t_Node *newHead;
-	
+	t_Node	*current;
+	t_Node	*new_head;
+
 	current = *stack;
-	newHead = (*stack)->next;
-	current->next = newHead->next;
-	*stack = newHead;
-	newHead->next = current;
+	new_head = (*stack)->next;
+	current->next = new_head->next;
+	*stack = new_head;
+	new_head->next = current;
 	if (signature == 'a')
 		write(1, "sa\n", 3);
 	else
@@ -36,19 +36,20 @@ void	swap_elements(t_Node **stack, int signature)
 */
 void	rotate_elements(t_Node **stack, int signature)
 {
-	t_Node *current;
-	t_Node *newHead;
-	t_Node *newLast;
+	t_Node	*current;
+	t_Node	*new_head;
+	t_Node	*new_last;
+
 	current = *stack;
-	newHead = *stack;
-	while (newHead->next)
+	new_head = *stack;
+	while (new_head->next)
 	{
-		newLast = newHead;
-		newHead = newHead->next;
+		new_last = new_head;
+		new_head = new_head->next;
 	}
-	newLast->next = NULL;
-	newHead->next = current;
-	*stack = newHead;
+	new_last->next = NULL;
+	new_head->next = current;
+	*stack = new_head;
 	if (signature == 'a')
 		write(1, "rra\n", 4);
 	else
@@ -61,22 +62,22 @@ void	rotate_elements(t_Node **stack, int signature)
 */
 void	reverse_elements(t_Node **stack, int signature)
 {
-	t_Node *current;
-	t_Node *newHead;
-	t_Node *newLastHead;
+	t_Node	*current;
+	t_Node	*new_head;
+	t_Node	*new_last_head;
 
-	newHead = (*stack)->next;
-	if (newHead == NULL)
+	new_head = (*stack)->next;
+	if (new_head == NULL)
 		return ;
 	current = *stack;
-	newLastHead = *stack;
+	new_last_head = *stack;
 	while (current->next)
 	{
 		current = current->next;
 	}
-	current->next = newLastHead;
-	newLastHead->next = NULL;
-	*stack = newHead;
+	current->next = new_last_head;
+	new_last_head->next = NULL;
+	*stack = new_head;
 	if (signature == 'a')
 		write(1, "ra\n", 3);
 	else
@@ -90,8 +91,9 @@ void	reverse_elements(t_Node **stack, int signature)
 */
 void	push_to(t_Node **a, t_Node **b, int signature)
 {
-	t_Node *to_push = *a;
-	
+	t_Node	*to_push;
+
+	to_push = *a;
 	if (a == NULL)
 		return ;
 	*a = (*a)->next;
@@ -114,14 +116,14 @@ b c a --> ra(abc)
 b a c --> sa(abc)
 a c b --> sa(cab) --> rra(abc)
 
-*/ 
+*/
 
 void	sort_three(t_Node **stack)
 {
 	t_Node	*first;
 	t_Node	*second;
 	t_Node	*third;
-	
+
 	first = *stack;
 	second = first->next;
 	third = second->next;
@@ -129,7 +131,7 @@ void	sort_three(t_Node **stack)
 		&& (second->data < third->data))
 		return ;
 	if ((first->data < second->data && first->data > third->data)
-			||(first->data > second->data && first->data < third->data))
+		|| (first->data > second->data && first->data < third->data))
 		case_2(stack, &second);
 	else if (first->data > second->data)
 		case_1(stack, &second, &third);

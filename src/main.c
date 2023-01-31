@@ -22,23 +22,23 @@
 6. Free all
 */
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-  t_Node *struct_a;
-  t_Node *struct_b;
+	t_Node	*struct_a;
+	t_Node	*struct_b;
 
-  if (checking_is_right(ac, av) == true)
-  {
-    struct_a = initialize_the_nodes(ac, av);
-    struct_b = NULL;
-    printf("---\nPile A au debut:\n");
-    print_linked_list(struct_a);
-    sort_structure(&struct_a, &struct_b, ac - 1);
-    printf("\n---\nPile A a la fin:\n");
-    print_linked_list(struct_a);
-    ft_free_all(struct_a, struct_b);
-    return (0);
-  }
-  write(2, "Error\n", 6);
-  return (0);
+	if (checking_is_right(ac, av) == true)
+	{
+		struct_a = initialize_the_nodes(ac, av);
+		struct_b = NULL;
+		printf("---\nPile A au debut:\n");
+		print_linked_list(struct_a);
+		sort_structure(&struct_a, &struct_b, ac - 1);
+		printf("\n---\nPile A a la fin:\n");
+		print_linked_list(struct_a);
+		ft_free_all(struct_a, struct_b);
+		return (0);
+	}
+	write(2, "Error\n", 6);
+	return (0);
 }
