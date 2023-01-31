@@ -66,6 +66,8 @@ void	reverse_elements(t_Node **stack, int signature)
 	t_Node *newLastHead;
 
 	newHead = (*stack)->next;
+	if (newHead == NULL)
+		return ;
 	current = *stack;
 	newLastHead = *stack;
 	while (current->next)

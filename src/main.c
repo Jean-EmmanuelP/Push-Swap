@@ -26,6 +26,7 @@ int main(int ac, char **av)
 {
   t_Node *struct_a;
   t_Node *struct_b;
+  printf("number of elements : %d\n", ac - 1);
   if (checking_is_right(ac, av) == true)
   {
     struct_a = initialize_the_nodes(ac, av);
