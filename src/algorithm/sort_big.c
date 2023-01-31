@@ -34,9 +34,11 @@ void	move_to_max(t_Node **stack)
 		else if (pos > median && ((*stack)->index) != the_greater)
 			rotate_elements(stack, 'b'); // dernier -> premier
 	}
+	/*
 	printf("Stack B : ");
 	print_linked_list(*stack);
 	printf("\n");
+	*/
 }
 
 /* Cette fonction itere dans B, met le maximum en premiere position puis la push vers A */
@@ -86,11 +88,13 @@ void	sort_big(t_Node **stack_a, t_Node **stack_b, int div)
 		{
 			ft_pb_or_ra(stack_a, stack_b, range, div);
 			i++;
+			/*
 			printf("Stack A : ");
 			print_linked_list(*stack_a);
 			printf("Stack B : ");
 			print_linked_list(*stack_b);
 			printf("\n");
+			*/
 		}
 		range += div * 2;
 	}
