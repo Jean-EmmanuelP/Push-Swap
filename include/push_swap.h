@@ -1,17 +1,28 @@
-#ifndef  PUSH_SWAP_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jperrama <jperrama@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/31 22:58:14 by jean-emmanu       #+#    #+#             */
+/*   Updated: 2023/01/31 23:00:32 by jperrama         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # define PUSH_SWAP_H
 # include <stdio.h>
 # include <stdlib.h>
 # include <stdbool.h>
 
 typedef struct s_node {
-	int data;
-	int height;
-	int position;
-	struct s_node *next;
-	struct s_node *prev;
-	int index;
-} t_Node;
+	int				data;
+	int				height;
+	int				position;
+	struct s_node	*next;
+	struct s_node	*prev;
+	int				index;
+}	t_Node;
 
 /* src / parsing / checking.c */
 int		checking_is_right(int ac, char **av);
@@ -27,13 +38,13 @@ void	print_linked_index(t_Node *head);
 void	set_the_index(t_Node *head, int ac);
 t_Node	*new_elem(char *str);
 /* src / instructions / move.c */
-void    invertlastTwo(t_Node **head);
-void    move_first_element(t_Node **src, t_Node **dest);
-void    rotate(t_Node **head);
-void    reverse(t_Node **head);
+void	invertlastTwo(t_Node **head);
+void	move_first_element(t_Node **src, t_Node **dest);
+void	rotate(t_Node **head);
+void	reverse(t_Node **head);
 /* src / algorithm */
-void 	sort_elements(int ac, t_Node *head_a, t_Node *head_b);
-void 	sort_structure(t_Node **head_a, t_Node **head_b, int ac);
+void	sort_elements(int ac, t_Node *head_a, t_Node *head_b);
+void	sort_structure(t_Node **head_a, t_Node **head_b, int ac);
 void	swap_elements(t_Node **head_a, int signature);
 void	sort_three(t_Node **head_a);
 void	rotate_elements(t_Node **stack, int signature);
