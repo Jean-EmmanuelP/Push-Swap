@@ -31,15 +31,14 @@ int main(int ac, char **av)
   {
     struct_a = initialize_the_nodes(ac, av);
     struct_b = NULL;
-    sort_structure(&struct_a, &struct_b, ac - 1);
     printf("---\nPile A au debut:\n");
     print_linked_list(struct_a);
+    sort_structure(&struct_a, &struct_b, ac - 1);
     printf("\n---\nPile A a la fin:\n");
     print_linked_list(struct_a);
     ft_free_all(struct_a, struct_b);
     return (0);
   }
-  ft_free_all(struct_a, struct_b);
   write(2, "Error\n", 6);
   return (0);
 }

@@ -45,21 +45,17 @@ void	get_index(t_Node **stack_a)
 	}
 }
 
-/* Cette fonction trie 4 & 5 elements */
-void	sort_four_and_five(t_Node **stack_a, t_Node **stack_b, int height)
+/* Cette fonction trie 4 element */
+void	sort_four(t_Node **stack_a, t_Node **stack_b)
 {
 	t_Node *a;
-	int		transfer;
+	int	transfer;
 
-	transfer = 2;
-	if (height == 4)
-		transfer = 1;
-	height = height - transfer;
-	get_index(stack_a);
+	transfer = 1;
 	a = *stack_a;
 	while (transfer > 0)
 	{
-		if ((a->index <= 2 && height == 5) || (a->index == 1))
+		if (a->index == 1)
 		{
 			push_to(stack_a, stack_b, 'b');
 			transfer = transfer - 1;
@@ -69,11 +65,40 @@ void	sort_four_and_five(t_Node **stack_a, t_Node **stack_b, int height)
 		a = *stack_a;
 	}
 	sort_three(stack_a);
-	while (5 - height > 0)
+	push_to(stack_b, stack_a, 'a');
+	a = *stack_a;
+	if (a->index != 1)
+		swap_elements(stack_a, 'a');
+}
+
+/* Cette fonction trie 4 & 5 elements */
+void	sort_four_and_five(t_Node **stack_a, t_Node **stack_b, int height)
+{
+	t_Node *a;
+	int		transfer;
+
+	get_index(stack_a);
+	transfer = 2;
+	if (height == 4)
 	{
-		push_to(stack_b, stack_a, 'a');
-		height++;
+		sort_four(stack_a, stack_b);
+		return ;
 	}
+	a = *stack_a;
+	while (transfer > 0)
+	{
+		if (a->index <= 2)
+		{
+			push_to(stack_a, stack_b, 'b');
+			transfer = transfer - 1;
+		}
+		else
+			reverse_elements(stack_a, 'a');
+		a = *stack_a;
+	}
+	sort_three(stack_a);
+	push_to(stack_b, stack_a, 'a');
+	push_to(stack_b, stack_a, 'a');
 	a = *stack_a;
 	if (a->index != 1)
 		swap_elements(stack_a, 'a');
