@@ -26,6 +26,8 @@ int	args_are_numbers(int ac, char **av)
 		{
 			if (ft_isdigit(av[i][j], j) != 1024)
 				return (false);
+			if (ft_strlen(av[i] == 0))
+				return (false);
 			j++;
 		}
 		i++;
