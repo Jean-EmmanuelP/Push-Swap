@@ -26,8 +26,6 @@ int	args_are_numbers(int ac, char **av)
 		{
 			if (ft_isdigit(av[i][j], j) != 1024)
 				return (false);
-			if (ft_strlen(av[i] == 0))
-				return (false);
 			j++;
 		}
 		i++;
@@ -47,6 +45,8 @@ int	args_are_single(int ac, char **av)
 		while (j < ac)
 		{
 			if (ft_strcmp(av[i], av[j]) == 0)
+				return (false);
+			if (ft_strcmp(av[i], "") == 0)
 				return (false);
 			j++;
 		}
